@@ -1,0 +1,24 @@
+{
+  "name": "Starter",
+  "version": "1.0.0",
+  "description": "A starter package for web greatness",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-prettyerror": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "scully",
+  "license": "ISC"
+}
