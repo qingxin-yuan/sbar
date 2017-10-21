@@ -1,0 +1,7 @@
+.site-footer {
+    @extend %flex-center;
+    color: $darkest;
+    padding: 1rem;
+    background:rgba($lightest,0.9);
+    z-index:99;
+}

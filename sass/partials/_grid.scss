@@ -1,0 +1,92 @@
+.grid {
+    display: grid; // flex-flow: row nowrap;
+    justify-content: center;
+    grid-template-columns: repeat(4, 25vw);
+    grid-auto-rows: 25vw;
+}
+
+.grid__item {
+    flex: 1 1 25vw;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    &:nth-of-type(1) {
+        @include bg-img('https://picsum.photos/600/300?image=320');
+    }
+    &:nth-of-type(2) {
+        @include bg-img('https://picsum.photos/600/300?image=321');
+    }
+    &:nth-of-type(3) {
+        @include bg-img('https://picsum.photos/600/300?image=382');
+    }
+    &:nth-of-type(4) {
+        @include bg-img('https://picsum.photos/600/300?image=603');
+    }
+    &:nth-of-type(5) {
+        @include bg-img('https://picsum.photos/600/300?image=202');
+    }
+    &:nth-of-type(6) {
+        @include bg-img('https://picsum.photos/600/300?image=302');
+    }
+    &:nth-of-type(7) {
+        @include bg-img('https://picsum.photos/600/300?image=402');
+    }
+    &:nth-of-type(8) {
+        @include bg-img('https://picsum.photos/600/300?image=512');
+    }
+    &__bghover {
+
+        perspective: 100px;
+        perspective-origin: center;
+        z-index: 20;
+        background: linear-gradient(to bottom, rgba($darkest, 0.2), rgba($darkest, 0.6));
+        padding: 2rem;
+        &__title {
+            font-weight: normal;
+            // transform: translateZ(0);
+            // backface-visibility: hidden;
+            // -webkit-font-smoothing: subpixel-antialiased;
+            // transform-style: preserve-3d;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 30;
+            color: $lightest;
+            transition: .5s;
+            // transition-delay: 1s;
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; // adjusting z-index to be lower than .content
+        z-index: 1; // inherits parent background e.g. the background image
+        background: inherit; // transition, with property set as transform
+        transition: transform 1s; // adding a delay
+        transition-delay: 0s; // easing
+        transition-timing-function: ease-out;
+    }
+    &:hover::before {
+        // transform property, grows the element 1.2* its size
+        transform: scale(1.2);
+    } // Parent div container hover, what the mixin is applied to e.g. .grid-item
+
+    &:hover {
+        .grid__item__bghover__title {
+            // font-size: 2.5rem;
+            transform:scale(1.5) rotateY(40deg);
+
+
+            color: $highlight;
+            transition: .5s;
+            // transition-delay: 1s;
+        }
+    }
+}

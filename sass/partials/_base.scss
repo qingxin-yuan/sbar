@@ -17,3 +17,11 @@ a:visited {
     color: $darkest;
     text-decoration: none;
 }
+
+.site  {
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction:column;
+}
+

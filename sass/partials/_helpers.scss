@@ -2,3 +2,10 @@
     padding: 0;
     margin: 0;
 } // use in style by using: @extend %zero-pad-marg;
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}

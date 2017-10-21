@@ -1,0 +1,25 @@
+@mixin bg-img($url) {
+    background: url($url)no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+@mixin max-width($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin min-width($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin transition-base($time: .5s) {
+    transition: $time;
+}
+
+@mixin fade-in($time: .5s) {
+    animation: fadeIn $time;
+}
