@@ -1,8 +1,16 @@
 .grid {
-    display: grid; // flex-flow: row nowrap;
+    display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, 25vw);
-    grid-auto-rows: 25vw;
+    grid-template-columns: repeat(2, 50vw);
+    grid-auto-rows:50vw;
+    @include tablet {
+        grid-template-columns: repeat(3, 33.33vw);
+        grid-auto-rows: 33.33vw;
+    }
+    @include desktop {
+        grid-template-columns: repeat(4, 25vw);
+        grid-auto-rows: 25vw;
+    }
 }
 
 .grid__item {
@@ -14,7 +22,6 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-
     &:nth-of-type(1) {
         @include bg-img('https://picsum.photos/600/300?image=320');
     }
@@ -40,7 +47,6 @@
         @include bg-img('https://picsum.photos/600/300?image=512');
     }
     &__bghover {
-
         perspective: 100px;
         perspective-origin: center;
         z-index: 20;
@@ -48,16 +54,11 @@
         padding: 2rem;
         &__title {
             font-weight: normal;
-            // transform: translateZ(0);
-            // backface-visibility: hidden;
-            // -webkit-font-smoothing: subpixel-antialiased;
-            // transform-style: preserve-3d;
             font-size: 1.5rem;
             position: relative;
             z-index: 30;
             color: $lightest;
             transition: .5s;
-            // transition-delay: 1s;
         }
     }
     &::before {
@@ -77,16 +78,12 @@
         // transform property, grows the element 1.2* its size
         transform: scale(1.2);
     } // Parent div container hover, what the mixin is applied to e.g. .grid-item
-
     &:hover {
         .grid__item__bghover__title {
             // font-size: 2.5rem;
-            transform:scale(1.5) rotateY(40deg);
-
-
+            transform: scale(1.5) rotateY(40deg);
             color: $highlight;
-            transition: .5s;
-            // transition-delay: 1s;
+            transition: .5s; // transition-delay: 1s;
         }
     }
 }

@@ -1,25 +1,30 @@
+// bg image transition
 @mixin bg-img($url) {
     background: url($url)no-repeat;
     background-position: center center;
     background-size: cover;
 }
 
-@mixin max-width($width) {
-    @media (max-width: $width) {
-        @content;
-    }
-}
-
-@mixin min-width($width) {
-    @media (max-width: $width) {
-        @content;
-    }
-}
-
+// css transition
 @mixin transition-base($time: .5s) {
     transition: $time;
 }
 
+// css transition
 @mixin fade-in($time: .5s) {
     animation: fadeIn $time;
+}
+
+// media query
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+// media query
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
 }
